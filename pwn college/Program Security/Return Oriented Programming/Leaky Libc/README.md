@@ -133,7 +133,7 @@ pip install pwntools
 ---
 
 ## Notes
-
+- For The Hard Challenge just change the offset of padding 
 - The exploit assumes libc 2.31 with specific gadgets available
 - The binary must be vulnerable to buffer overflow and leak a libc address
 - Address calculations depend on the exact libc version matching the target
